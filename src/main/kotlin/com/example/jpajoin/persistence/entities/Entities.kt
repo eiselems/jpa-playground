@@ -14,7 +14,6 @@ import javax.persistence.Id
 import javax.persistence.JoinColumn
 import javax.persistence.ManyToOne
 import javax.persistence.OneToMany
-import javax.persistence.SequenceGenerator
 import javax.persistence.Table
 
 @Entity
@@ -73,7 +72,6 @@ data class UserCompanyRoles(
         var oid: Long = 0,
 
         @ManyToOne(fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
-
         var user: User,
 
         @ManyToOne(fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
@@ -87,5 +85,5 @@ data class UserCompanyRoles(
 )
 
 enum class Role {
-        ADMIN, MANAGER, USER
+    ADMIN, MANAGER, USER
 }
